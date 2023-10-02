@@ -6,14 +6,14 @@ if (typeof window.reinitializer !== "function") {
   // Initialize of the class in global namespace
   window.reinitializer = class reinitializer {
     /**
-     * Parent element for location <script> elements
-     */
-    js = document.getElementsByTagName("body")[0];
-
-    /**
      * Parent element for location <link> elements
      */
-    css = document.getElementsByTagName("head")[0];
+    css = document.head;
+    
+    /**
+     * Parent element for location <script> elements
+     */
+    js = document.body;
 
     /**
      * Target element for searching new <link> and <script> elements
