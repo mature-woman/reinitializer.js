@@ -1,4 +1,4 @@
-# js-reinitializer
+# reinitializer.js
 
 A library for tracking and reinitializing `<link>` and `<script>` elements so that the browser downloads them. 
 
