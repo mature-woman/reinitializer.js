@@ -133,7 +133,6 @@ if (typeof window.reinitializer !== "function") {
             )
               .filter((e) => e.textContent === text)
           ) {
-            console.log(element.textContent === text, element);
             element.remove();
           }
 
