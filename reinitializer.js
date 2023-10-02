@@ -18,7 +18,7 @@ if (typeof window.reinitializer !== "function") {
     /**
      * Target element for searching new <link> and <script> elements
      */
-    root = document.getElementsByTagName("main")[0];
+    root = document.body.getElementsByTagName("main")[0];
 
     /**
      * Instance of the observer
