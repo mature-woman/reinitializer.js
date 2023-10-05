@@ -86,8 +86,8 @@ if (typeof window.reinitializer !== "function") {
 					continue;
 				}
 
-				// Initialization outerHTML of the <script> element
-				const html = script.outerHTML;
+				// Initialization outerHTML of the <link> element
+				const html = link.outerHTML;
 
 				// Stop listening
 				this.stop();
@@ -110,6 +110,9 @@ if (typeof window.reinitializer !== "function") {
 
 				// Write new element
 				this.css.appendChild(element);
+
+				// Write content to the new <link> element
+				element.outerHTML = html;
 			}
 
 			for (
