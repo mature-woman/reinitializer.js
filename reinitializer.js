@@ -23,7 +23,7 @@ if (typeof window.reinitializer !== "function") {
 		/**
 		* Instance of the observer
 		*/
-		observer = new MutationObserver(() => this.handle(this.root));
+		observer = new MutationObserver(() => this.handle());
 
 		/**
 		* Construct
@@ -37,10 +37,12 @@ if (typeof window.reinitializer !== "function") {
 
 		/**
 		* Reinitialize <link> and <script> elements
+			*
+			* @param {bool} download Reinitialize elements with downloading or just move
 		*
 		* @return {bool} Processing status
 		*/
-		handle() {
+		handle(download = true) {
 			// Check for a dublicate execute launch
 			if (this.started) return false;
 
@@ -56,8 +58,8 @@ if (typeof window.reinitializer !== "function") {
 				// Initialization of the <link> element
 				const link = links[0];
 
-				if (link.getAttribute("data-reinitializer-ignore") === "true") {
-					// Marked as ignored
+				if (download !== true || link.getAttribute("data-reinitializer-ignore") === "true") {
+					// Download is disabled or marked as ignored
 
 					// Move element
 					this.css.appendChild(link);
@@ -124,8 +126,11 @@ if (typeof window.reinitializer !== "function") {
 				// Initialization of the <script> element
 				const script = scripts[0];
 
-				if (script.getAttribute("data-reinitializer-ignore") === "true") {
-					// Marked as ignored
+
+					console.log(download);
+				if (download !== true || script.getAttribute("data-reinitializer-ignore") === "true") {
+					// Download is disabled or marked as ignored
+
 
 					// Move element
 					this.js.appendChild(script);
