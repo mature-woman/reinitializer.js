@@ -4,8 +4,9 @@ A library for tracking and reinitializing `<link>` and `<script>` elements so th
 
 Used when developing any dynamic requests via JS where links to third-party documents are supplied along with HTML content.
 
+
 # Instruction
-By default, the library is observe the first `<main>` element, but you can reassign it by passing an argument of type `{HTMLElement|null}` to `new e.detail.reinitializer();`
+By default, observation occurs on the first `<main>` element, but you can change this behavior by passing the first argument in `{HTMLElement}` format to `new e.detail.reinitializer()`
 
 	document.addEventListener('reinitializer.initialized', function (e) {
 		// Initialized reinitializer
